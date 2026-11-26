@@ -43,7 +43,7 @@ A pair that fails is replaced with an explicit "I do not see that in the text" a
 
 [`local_debate/`](local_debate) is a Flask app where two personas, **Ram** (risk-aware) and **Krishna** (solution-focused), debate a topic turn by turn and then summarize the key takeaways. Both run on Mistral-7B quantized to Q2_K (about 2.7 GB) with llama-cpp-python, 20 layers offloaded to the GPU.
 
-What I learned here shaped Arena: small quantized models drifted and repeated themselves within a few turns, and a 10-turn debate took minutes on one GPU. The production version moved to hosted APIs for speed and cost, and added web evidence, blind judging and hallucination checks.
+Arena later moved to hosted APIs for speed and cost, and added live web evidence, blind judging and hallucination checks.
 
 ```bash
 pip install -r requirements.txt

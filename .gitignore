@@ -1,6 +1,6 @@
 # model weights and outputs
-models/
-outputs/
+/models/
+/outputs/
 *.gguf
 *.safetensors
 *.bin
@@ -8,16 +8,16 @@ outputs/
 *.onnx
 
 # data and conversations
-data/
-sessions/
-memory/
+/data/
+/sessions/
+/memory/
 *.jsonl
 *.docx
 
 # secrets
 *.env
 .env*
-API/
+/API/
 *api*.json
 anthropic.json
 gemini.json
