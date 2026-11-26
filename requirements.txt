@@ -1,0 +1,12 @@
+torch
+transformers
+peft
+bitsandbytes
+datasets
+accelerate
+llama-cpp-python
+sentence-transformers
+python-docx
+numpy
+flask
+flask-cors

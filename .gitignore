@@ -1,0 +1,30 @@
+# model weights and outputs
+models/
+outputs/
+*.gguf
+*.safetensors
+*.bin
+*.pth
+*.onnx
+
+# data and conversations
+data/
+sessions/
+memory/
+*.jsonl
+*.docx
+
+# secrets
+*.env
+.env*
+API/
+*api*.json
+anthropic.json
+gemini.json
+groq.json
+
+# python
+__pycache__/
+*.pyc
+venv/
+.venv/

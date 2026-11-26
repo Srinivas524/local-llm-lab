@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramdos AI Arena</title>
+    <link rel="stylesheet" href="/arena/static/style.css">
+</head>
+<body>
+
+<!-- Offline Screen -->
+<div id="offline-screen" class="hidden">
+    <div class="gate-box">
+        <div class="gate-logo">R</div>
+        <div class="gate-title">Ramdos AI Arena</div>
+        <div style="font-size: 32px;">🔌</div>
+        <div style="font-size: 15px; color: #f87171; font-weight: 600;">Arena is currently offline</div>
+        <div style="font-size: 13px; color: #94a3b8;">Start the backend: python local_debate/app.py</div>
+    </div>
+</div>
+
+
+<!-- Mobile backdrop -->
+<div id="sidebar-backdrop"></div>
+
+<div class="app-container">
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-inner">
+
+            <!-- Brand -->
+            <div class="brand">
+                <div class="brand-logo">R</div>
+                <div class="brand-text">
+                    <h1>Ramdos</h1>
+                    <p>AI Arena</p>
+                </div>
+            </div>
+
+            <div class="section-title">Mode</div>
+            <div class="model-list">
+                <button class="model-btn" data-mode="chat">
+                    <span class="model-icon">💬</span>
+                    <span class="model-labels">
+                        <span class="model-name">Chat Mode</span>
+                        <span class="model-desc">Single AI Conversation</span>
+                    </span>
+                </button>
+                <button class="model-btn active" data-mode="debate">
+                    <span class="model-icon">⚔️</span>
+                    <span class="model-labels">
+                        <span class="model-name">Debate Mode</span>
+                        <span class="model-desc">Ram vs Krishna</span>
+                    </span>
+                </button>
+            </div>
+
+            <!-- AI Selection -->
+            <div id="ai-selector" class="ai-selector hidden">
+                <div class="section-title">Select AI</div>
+                <div class="ai-options">
+                    <button class="ai-btn active" data-ai="ram">
+                        <span class="ai-icon">🛡️</span>
+                        <span class="ai-info">
+                            <span class="ai-name">Ram</span>
+                            <span class="ai-trait">Risk & Constraints</span>
+                        </span>
+                    </button>
+                    <button class="ai-btn" data-ai="krishna">
+                        <span class="ai-icon">⚡</span>
+                        <span class="ai-info">
+                            <span class="ai-name">Krishna</span>
+                            <span class="ai-trait">Optimization & Scale</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Theme toggle at bottom -->
+            <div class="sidebar-footer">
+                <button id="theme-toggle-btn" class="theme-toggle-btn">
+                    <span id="theme-icon">🌙</span>
+                    <span class="sidebar-footer-label">Dark Mode</span>
+                </button>
+            </div>
+
+        </div>
+    </aside>
+
+    <!-- Main chat -->
+    <main class="chat-panel">
+
+        <!-- Header -->
+        <header class="chat-header">
+            <div class="header-left">
+                <button id="sidebar-toggle-btn" class="sidebar-toggle-btn" aria-label="Toggle sidebar">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                </button>
+                <div>
+                    <h2 id="mode-title">Ram vs Krishna</h2>
+                    <p id="mode-status">Status: Idle</p>
+                </div>
+            </div>
+
+            <div class="debate-controls" id="debate-controls">
+				<div class="ctrl-row">
+					<button id="start-btn">Start</button>
+					<button id="pause-btn">Pause</button>
+					<button id="resume-btn">Resume</button>
+					<button id="stop-btn">Stop</button>
+				</div>
+            </div>
+        </header>
+
+        <section id="messages" class="chat-messages"></section>
+
+        <form id="chat-form" class="chat-input-row">
+            <input
+                id="user-input"
+                type="text"
+                placeholder="Enter debate topic..."
+                autocomplete="off"
+            />
+            <button type="submit" id="send-btn">Set Topic</button>
+        </form>
+
+    </main>
+</div>
+
+<script src="/arena/static/chat.js"></script>
+</body>
+</html>
